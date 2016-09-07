@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var topics = ["cat","dog","pig"];
+	var topics = ["soccer","football","gymnastics"];
 
 	function renderButtons(){
 		$("#choices").empty();
@@ -25,10 +25,12 @@ $(document).ready(function(){
 			results = response.data;
 			console.log(results);
 			var video;
+			$('#videos').empty();
 			results.forEach(function(ele){
 				video =$('<video loop>');
 				video.addClass("col-lg-3");
 				video.addClass("video-clip");
+				video.addClass("embed-responsive");
 				video.attr("src",ele.images.fixed_height.mp4);
 				$('#videos').append(video);
 

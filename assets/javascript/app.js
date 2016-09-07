@@ -1,13 +1,16 @@
 $(document).ready(function(){
 	var topics = ["cat","dog","pig"];
 
-	topics.forEach(function(ele){
-		var btn = $("<button>");
-		btn.addClass("col-lg-1");
+	function renderButtons(){
+		$("#choices").empty();
+		topics.forEach(function(ele){
+			var btn = $("<button>");
+			btn.addClass("col-lg-1");
 
-		btn.html(ele);
-		$("#choices").append(btn);
-	});
+			btn.html(ele);
+			$("#choices").append(btn);
+		});
+	}
 
 	function fetchImages(){
 		console.log($(this).text());
@@ -23,8 +26,20 @@ $(document).ready(function(){
 			console.log(results);
 		});
 
+		
+
 	}
 
+	renderButtons();
 	$('#choices').on('click','button',fetchImages);
+	$('#btnAdd').click(function(event){
+		event.preventDefault()
+		if($('#userChoice').val()){
+			topics.push($('#userChoice').val());
+			renderButtons();
+			$('#userChoice').val("");
+		}
+		
+	})
 
 });

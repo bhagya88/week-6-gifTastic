@@ -14,8 +14,8 @@ $(document).ready(function(){
 
 	function fetchImages(){
 		console.log($(this).text());
-
-		var queryURL ="http://api.giphy.com/v1/gifs/search?q="+$(this).text()+"&limit=10&api_key=dc6zaTOxFJmzC";
+		var apiKey="dc6zaTOxFJmzC";
+		var queryURL ="http://api.giphy.com/v1/gifs/search?q="+$(this).text()+"&limit=10&api_key="+apiKey;
 		console.log(queryURL);
 		$.ajax({
 			url:queryURL,
@@ -24,10 +24,16 @@ $(document).ready(function(){
 		}).done(function(response){
 			results = response.data;
 			console.log(results);
+			var video;
+			results.forEach(function(ele){
+				video =$('<video loop>');
+				video.addClass("col-lg-3");
+				video.addClass("video-clip");
+				video.attr("src",ele.images.fixed_height.mp4);
+				$('#videos').append(video);
+
+			});	
 		});
-
-		
-
 	}
 
 	renderButtons();
@@ -40,6 +46,19 @@ $(document).ready(function(){
 			$('#userChoice').val("");
 		}
 		
-	})
+	});
+
+	$('#videos').on('click','*',function(){
+
+		if (this.paused) {
+         this.play();
+         
+       } else {
+          this.pause();
+          
+       }
+		
+		
+	});
 
 });

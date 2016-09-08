@@ -71,18 +71,22 @@ $(document).ready(function(){
        }
 	}
 
-
-	renderButtons();
-	$('#choices').on('click','button',fetchImages);
-	$('#btnAdd').click(function(event){
-		event.preventDefault()
-		if($('#userChoice').val()){
-			topics.push($('#userChoice').val());
+	function addGame(event){
+		event.preventDefault();
+		var userChoice =$('#userChoice').val().trim();
+		if(userChoice && topics.indexOf(userChoice) === -1){
+			topics.push($('#userChoice').val().trim());
 			renderButtons();
 			$('#userChoice').val("");
 		}
 		
-	});
+	}
+
+
+	renderButtons();
+	$('#choices').on('click','button',fetchImages);
+
+	$('#btnAdd').click(addGame);
 
 	$('#images').on('click','*',toggleImage);
 

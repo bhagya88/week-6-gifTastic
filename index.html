@@ -10,21 +10,23 @@
 </head>
 <body>
 	<header class='text-center'><h1>GIFTASTIC</h1><i><h4>Get gifs of your favorite sport from GIPHY</i></h4></header>
+	
 	<div  class="container">
 		<p><strong>Click on any sport</strong></p>
-		<div id="choices" class="row">
-		
+		<div id="choices" class="row"></div>
 	</div>
-
-	<form >
-		  <div class="form-group container">
-		    <label for="userChoice" class="row">Add a sport of your choice</label>
+	<br>
+	<form class="container">
+		<div class="form-group row">
+		    <label for="userChoice" class="col-lg-12">Add a sport of your choice</label>
 		    <div class="row">
-		    	<input type="text" class="form-control col-lg-4" id="userChoice" placeholder="">
-		    	<div class="col-lg-8"></div>	
+			    <div class="col-lg-4"><input id="userChoice" type="text" class="form-control" placeholder=""></div>
+			    	
+			    <div class="col-lg-8"></div>	
 		    </div>
-			</div>
-		  <button id="btnAdd" type="submit" class="btn btn-default">Submit </button>
+		</div>
+		<div class="row"><button id="btnAdd" type="submit" class="btn btn-default">Submit </button></div>
+		
 		 
 	</form>
 	<br>

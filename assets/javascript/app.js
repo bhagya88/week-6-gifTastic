@@ -24,21 +24,33 @@ $(document).ready(function(){
 		}).done(function(response){
 			results = response.data;
 			console.log(results);
+			var figure;
+			var figCaption;
 			var image;
+
 			$('#images').empty();
 			$('#imgMsg').removeClass("hidden");
 			results.forEach(function(ele){
-				image =$('<img>');
-				image.addClass("col-lg-3");
-				image.addClass("col-sm-6");
-				image.addClass("col-xs-12");
+				figure = $('<figure>');
+				figCaption=$('<figcaption class="row text-center">');
+				image =$('<img class="row">');
+
+				figure.addClass("col-lg-3");
+				figure.addClass("col-sm-6");
+				figure.addClass("col-xs-12");
+				figure.addClass("image-box")
 				image.addClass("gify-image");
 				image.addClass("img-rounded");
 				image.attr("src",ele.images.fixed_height_still.url);
 				image.attr("data-stillsrc",ele.images.fixed_height_still.url);
 				image.attr("data-animatesrc",ele.images.fixed_height.url);
 				image.attr("data-isstill",true);
-				$('#images').append(image);
+
+				figCaption.html("Rating: "+ele.rating);
+				figure.append(figCaption);
+				
+				figure.append(image);
+				$('#images').append(figure);
 
 			});	
 		});

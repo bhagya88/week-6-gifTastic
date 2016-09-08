@@ -3,17 +3,28 @@ html,body{
 	background: rgb(211,231,162);
 	  /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left top, rgb(211,231,162), 
-rgb(223,231,28) ); /* For Safari 5.1 to 6.0 */
+rgb(253,175,95)
+ ); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(bottom right, rgb(211,231,162), 
-rgb(223,231,28) ); /* For Opera 11.1 to 12.0 */
+rgb(253,175,95)
+ ); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(bottom right, rgb(211,231,162), 
-rgb(223,231,28) ); /* For Firefox 3.6 to 15 */
+rgb(253,175,95)
+ ); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, rgb(211,231,162), 
-rgb(223,231,28) ); /* Standard syntax */
+rgb(253,175,95)
+ ); /* Standard syntax */
 }
 
 .gify-image{
-	height:300px;
+	height:200px;
+	width:100%;
+	
+
+}
+
+.image-box{
 	padding:2%;
+	
 
 }

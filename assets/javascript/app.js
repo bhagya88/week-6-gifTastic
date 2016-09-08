@@ -24,19 +24,40 @@ $(document).ready(function(){
 		}).done(function(response){
 			results = response.data;
 			console.log(results);
-			var video;
-			$('#videos').empty();
+			var image;
+			$('#images').empty();
 			results.forEach(function(ele){
-				video =$('<video loop>');
-				video.addClass("col-lg-3");
-				video.addClass("video-clip");
-				video.addClass("embed-responsive");
-				video.attr("src",ele.images.fixed_height.mp4);
-				$('#videos').append(video);
+				image =$('<img>');
+				image.addClass("col-lg-3");
+				image.addClass("col-sm-6");
+				image.addClass("col-xs-12");
+				image.addClass("gify-image");
+				image.addClass("img-rounded");
+				image.attr("src",ele.images.fixed_height_still.url);
+				image.attr("data-stillsrc",ele.images.fixed_height_still.url);
+				image.attr("data-animatesrc",ele.images.fixed_height.url);
+				image.attr("data-isstill",true);
+				$('#images').append(image);
 
 			});	
 		});
 	}
+
+
+	function toggleImage(event){
+		console.log($(this));
+		event.preventDefault();
+		if ($(this).data().isstill) {
+         $(this).attr("src",$(this).data().animatesrc);
+         $(this).data().isstill=false;
+         
+       } else {
+         $(this).attr("src",$(this).data().stillsrc);
+         $(this).data().isstill=true;
+          
+       }
+	}
+
 
 	renderButtons();
 	$('#choices').on('click','button',fetchImages);
@@ -50,17 +71,6 @@ $(document).ready(function(){
 		
 	});
 
-	$('#videos').on('click','*',function(){
-
-		if (this.paused) {
-         this.play();
-         
-       } else {
-          this.pause();
-          
-       }
-		
-		
-	});
+	$('#images').on('click','*',toggleImage);
 
 });

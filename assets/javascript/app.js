@@ -36,8 +36,8 @@ $(document).ready(function(){
 				image =$('<img class="row">');
 
 				figure.addClass("col-lg-3");
-				figure.addClass("col-sm-6");
-				figure.addClass("col-xs-12");
+				figure.addClass("col-sm-4");
+				figure.addClass("col-xs-6");
 				figure.addClass("image-box")
 				image.addClass("gify-image");
 				image.addClass("img-rounded");

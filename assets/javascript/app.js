@@ -5,7 +5,7 @@ $(document).ready(function(){
 		$("#choices").empty();
 		topics.forEach(function(ele){
 			var btn = $("<button>");
-			btn.addClass("col-lg-1");
+			btn.addClass("col-lg-1 btn btn-default");
 
 			btn.html(ele);
 			$("#choices").append(btn);
@@ -26,6 +26,7 @@ $(document).ready(function(){
 			console.log(results);
 			var image;
 			$('#images').empty();
+			$('#imgMsg').removeClass("hidden");
 			results.forEach(function(ele){
 				image =$('<img>');
 				image.addClass("col-lg-3");

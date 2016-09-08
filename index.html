@@ -3,28 +3,33 @@
 <head>
 	<title>Games</title>
 	<meta name="viewport" content="width=device-width">
-
-
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Caesar+Dressing|Kanit|Ubuntu+Mono" rel="stylesheet">
 
 </head>
 <body>
-	<header>Get the video clips of your favorite sport from GIPHY</header>
+	<header class='text-center'><h1>GIFTASTIC</h1><i><h4>Get gifs of your favorite sport from GIPHY</i></h4></header>
 	<div  class="container">
+		<p><strong>Click on any sport</strong></p>
 		<div id="choices" class="row">
 		
 	</div>
 
-	<form>
-		  <div class="form-group">
-		    <label for="userChoice">Add a sport of your choice</label>
-		    <input type="text" class="form-control" id="userChoice" placeholder="">
-		  </div>
+	<form >
+		  <div class="form-group container">
+		    <label for="userChoice" class="row">Add a sport of your choice</label>
+		    <div class="row">
+		    <input type="text" class="form-control col-lg-4" id="userChoice" placeholder=""><div class="col-lg-8"></div>	
+		    </div>
+			</div>
 		  <button id="btnAdd" type="submit" class="btn btn-default">Submit </button>
+		 
 	</form>
-	<div class="container-fluid">
+	<br>
+
+	<div class="container">
+		<h2 id="imgMsg" class="text-center hidden" >Click on the image to animate</h2>
 		<div id="images"  class="row"></div>
 	</div>
 

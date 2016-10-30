@@ -1,8 +1,8 @@
 # GifTastic
-The theme for this page is sports. It is a dynamic web page where the GIPHY API is used to fetch gifs of your choice. It is developed using HTML, CSS, Bootstrap, Javascript, JQuery and ofcourse GIPHY API.
+The theme for this page is sports. It is a dynamic web page where the `GIPHY API` is used to fetch gifs of your choice. It is developed using HTML, CSS, Bootstrap, Javascript, JQuery and ofcourse GIPHY API.
 
 ### Demo
-[Watch the demo video](https://calm-inlet-38692.herokuapp.com/)
+[Click to watch the demo](https://calm-inlet-38692.herokuapp.com/)
 
 ### How it works
 

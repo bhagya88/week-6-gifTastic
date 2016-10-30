@@ -1,6 +1,8 @@
 $(document).ready(function(){
+	// set default topics
 	var topics = ["soccer","football","gymnastics"];
 
+	// renders buttons
 	function renderButtons(){
 		$("#choices").empty();
 		topics.forEach(function(ele){
@@ -12,6 +14,7 @@ $(document).ready(function(){
 		});
 	}
 
+	// makes api call to giphy to get images related to text on the button
 	function fetchImages(){
 		console.log($(this).text());
 		var apiKey="dc6zaTOxFJmzC";
@@ -30,6 +33,8 @@ $(document).ready(function(){
 
 			$('#images').empty();
 			$('#imgMsg').removeClass("hidden");
+
+			// shows images on the page
 			results.forEach(function(ele){
 				figure = $('<figure>');
 				figCaption=$('<figcaption class="row text-center">');
@@ -57,6 +62,7 @@ $(document).ready(function(){
 	}
 
 
+	// toggles between showing image or animated clip
 	function toggleImage(event){
 		console.log($(this));
 		event.preventDefault();
@@ -71,6 +77,7 @@ $(document).ready(function(){
        }
 	}
 
+	// lets user add a button of his choice
 	function addGame(event){
 		event.preventDefault();
 		var userChoice =$('#userChoice').val().trim();
@@ -82,12 +89,12 @@ $(document).ready(function(){
 		
 	}
 
-
+	//  starts program here
 	renderButtons();
+
+	// handles user interaction 
 	$('#choices').on('click','button',fetchImages);
-
 	$('#btnAdd').click(addGame);
-
 	$('#images').on('click','*',toggleImage);
 
 });

@@ -53,7 +53,6 @@ $(document).ready(function(){
 
 				figCaption.html("Rating: "+ele.rating);
 				figure.append(figCaption);
-				
 				figure.append(image);
 				$('#images').append(figure);
 
@@ -62,7 +61,7 @@ $(document).ready(function(){
 	}
 
 
-	// toggles between showing image or animated clip
+	// toggles between image or animated clip
 	function toggleImage(event){
 		console.log($(this));
 		event.preventDefault();
@@ -89,7 +88,7 @@ $(document).ready(function(){
 		
 	}
 
-	//  starts program here
+	// program execution starts here
 	renderButtons();
 
 	// handles user interaction 

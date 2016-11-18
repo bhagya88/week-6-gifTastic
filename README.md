@@ -13,12 +13,12 @@ The theme for this page is sports. It is a dynamic web page where the `GIPHY API
 * GIPHY API
 
 ### Challenges faced
-* HOW to animate the picture when user clicks on it?
+* How to animate the picture when user clicks on it?
 * How to add dynamic buttons?
 
 ### Solutions found
 * Console logging the object returned from GIPHY and searching for an animated picture on it and replacing the still picture with animated picrure worked.
-* Select element and append functions of Jquery are used to add dynamic buttons.
+* DOM manipulation functions of Jquery helped to create dynamic buttons.
 
 ### How it works
 
